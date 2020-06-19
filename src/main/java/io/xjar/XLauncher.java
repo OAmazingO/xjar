@@ -1,6 +1,7 @@
 package io.xjar;
 
 import io.xjar.key.XKey;
+import test.Encrypt;
 
 import java.io.*;
 import java.net.URI;
@@ -131,16 +132,19 @@ public class XLauncher implements XConstants {
                 throw new IOException("could not delete key file: " + keyfile.getCanonicalPath());
             }
         }
-
-        if (password == null && System.console() != null) {
-            Console console = System.console();
-            char[] chars = console.readPassword("password:");
-            password = new String(chars);
-        }
-        if (password == null) {
-            System.out.print("password:");
-            Scanner scanner = new Scanner(System.in);
-            password = scanner.nextLine();
+        if(Encrypt.INPUT_HIDE){
+            password = Encrypt.PASSWORD;
+        }else{
+            if (password == null && System.console() != null) {
+                Console console = System.console();
+                char[] chars = console.readPassword("password:");
+                password = new String(chars);
+            }
+            if (password == null) {
+                System.out.print("password:");
+                Scanner scanner = new Scanner(System.in);
+                password = scanner.nextLine();
+            }
         }
         this.xDecryptor = new XJdkDecryptor(algorithm);
         this.xEncryptor = new XJdkEncryptor(algorithm);

@@ -1,3 +1,6 @@
+# test包中可设置加密后的jia是否输入密码
+
+
 # XJar [![](https://jitpack.io/v/core-lib/xjar.svg)](https://jitpack.io/#core-lib/xjar)
 GitHub: https://github.com/core-lib/xjar
 ### Spring Boot JAR 安全加密运行工具，同时支持的原生JAR。
