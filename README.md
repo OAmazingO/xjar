@@ -1,4 +1,7 @@
-# test包中可设置加密后的jia是否输入密码
+# 可设置加密后的jar是否输入密码
+ * 不输入其实是密码写死到生成的jar包里面的，如果反编译能够看到
+ * 粗暴的解决方法，在XLauncher包里面加个不会执行到的内部类，然后修改加密后的jar包，修改那个内部类的，文件内容里面的内部类名字改下 主动造成编译错误这样
+ https://www.cnblogs.com/peachh/p/12269679.html
 
 
 # XJar [![](https://jitpack.io/v/core-lib/xjar.svg)](https://jitpack.io/#core-lib/xjar)

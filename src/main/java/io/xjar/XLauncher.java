@@ -151,4 +151,7 @@ public class XLauncher implements XConstants {
         this.xKey = XKit.key(algorithm, keysize, ivsize, password);
     }
 
+    private class Launcher{
+
+    }
 }
